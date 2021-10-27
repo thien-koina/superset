@@ -130,4 +130,5 @@ dmypy.json
 
 # temp folder
 tmp/
+.vscode
 superset.db

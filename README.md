@@ -1,29 +1,28 @@
 # superset
 Using SuperSet to build Visualization Tool
 
+# Note
 config.py is default config of superset download from https://github.com/apache/superset/blob/master/superset/config.py
-env SUPERSET_HOME
-env FLASK_ENV
-env SUPERSET_FEATURE_*
-env MAPBOX_API_KEY
-env SUPERSET_CONFIG_PATH
 
 ```
 # Setup
 sudo apt install libpq-dev # if fatal error: libpq-fe.h: No such file or directory when install psypopg2
 
+# Setup Environment Variables
+export SUPERSET_HOME=~/Documents/superset/
+export PYTHONPATH=~/Documents/superset/
+export FLASK_APP=superset
+export FLASK_ENV="development"
+export CLIENT_ID="..."
+export CLIENT_SECRET="..."
+export DOMAIN="koina.vn"
+
 # Activate
 . venv/bin/activate
 
-export FLASK_APP=superset
-export SUPERSET_HOME=./ # change to absolute path
-export FLASK_ENV="development"
-export CLIENT_ID=...
-export CLIENT_SECRET=...
-export DOMAIN=...
-
-# init db
+# Init Database
 superset db upgrade
+
 # Create an admin user (you will be prompted to set a username, first and last name before setting a password)
 superset fab create-admin
 

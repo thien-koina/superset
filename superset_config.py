@@ -44,17 +44,18 @@ OAUTH_PROVIDERS = [
         "icon": "fa-google",
         "token_key": "access_token",
         "remote_app": {
-            "client_id": os.get("CLIENT_ID"),
-            "client_secret": os.get("CLIENT_SECRET"),
+            "client_id": os.getenv("CLIENT_ID"),
+            "client_secret": os.getenv("CLIENT_SECRET"),
             "api_base_url": "https://www.googleapis.com/oauth2/v2/",
             "client_kwargs": {"scope": "email profile"},
             "request_token_url": None,
             "access_token_url": "https://accounts.google.com/o/oauth2/token",
             "authorize_url": "https://accounts.google.com/o/oauth2/auth",
-            "authorize_params": {"hd": os.get("DOMAIN")},
+            "authorize_params": {"hd": os.getenv("DOMAIN")},
         },
     }
 ]
+
 
 from custom_sso_security_manager import CustomSsoSecurityManager
 
