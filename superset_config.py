@@ -35,9 +35,10 @@ from flask_appbuilder.security.manager import (
     AUTH_OAUTH,
 )
 
+# This will make sure the redirect_uri is properly computed, even with SSL offloading
+ENABLE_PROXY_FIX = True
+
 AUTH_TYPE = AUTH_OAUTH
-AUTH_USER_REGISTRATION = True
-AUTH_USER_REGISTRATION_ROLE = "Public"
 OAUTH_PROVIDERS = [
     {
         "name": "google",
@@ -55,6 +56,16 @@ OAUTH_PROVIDERS = [
         },
     }
 ]
+
+# Map Authlib roles to superset roles
+AUTH_ROLE_ADMIN = "Admin"
+AUTH_ROLE_PUBLIC = "Public"
+
+# Will allow user self registration, allowing to create Flask users from Authorized User
+AUTH_USER_REGISTRATION = True
+
+# The default user self registration role
+AUTH_USER_REGISTRATION_ROLE = "Admin"
 
 
 from custom_sso_security_manager import CustomSsoSecurityManager

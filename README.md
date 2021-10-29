@@ -18,7 +18,7 @@ export CLIENT_SECRET="..."
 export DOMAIN="koina.vn"
 
 # Activate
-. venv/bin/activate
+source env/bin/activate
 
 # Init Database
 superset db upgrade
