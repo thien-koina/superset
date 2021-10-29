@@ -62,7 +62,7 @@ AUTH_ROLE_ADMIN = "Admin"
 AUTH_ROLE_PUBLIC = "Public"
 
 # Will allow user self registration, allowing to create Flask users from Authorized User
-AUTH_USER_REGISTRATION = True
+AUTH_USER_REGISTRATION = False
 
 # The default user self registration role
 AUTH_USER_REGISTRATION_ROLE = "Admin"
