@@ -38,3 +38,6 @@ superset run -p 8088 --with-threads --reload --debugger
 # Deactivate
 deactivate
 ```
+
+# Bugs:
+1. Google OAuth always auto pass through consent screen (not show to help user chooses another one)
